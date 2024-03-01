@@ -1,0 +1,51 @@
+body {
+    background: linear-gradient(red, blue, white);
+    height: 2000px;
+}
+
+
+span { 
+    
+color: white;
+
+
+}
+
+
+
+h1 {
+
+color: orange;
+
+}
+
+
+input {
+
+    accent-color: blue;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+span {
+    vertical-align: middle;
+}
+input {
+    vertical-align: middle;
+}
