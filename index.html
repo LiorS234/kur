@@ -106,6 +106,10 @@
         <p><strong>Feedback:</strong> <span id="resultFeedback"></span></p>
         <p><strong>Rating:</strong> <span id="resultRating"></span></p>
     </div>
+    <div id="viewResults" style="display: none;">
+        <h2>View Results:</h2>
+        <button id="viewBtn">View</button>
+    </div>
 </div>
 
 <script>
@@ -129,6 +133,23 @@
         // Hide form and display results
         document.getElementById('surveyForm').style.display = 'none';
         document.getElementById('results').style.display = 'block';
+        document.getElementById('viewResults').style.display = 'block';
+    });
+
+    document.getElementById('viewBtn').addEventListener('click', function() {
+        // You can set someone else's results manually here
+        var name = "John Doe";
+        var email = "johndoe@example.com";
+        var age = "30";
+        var feedback = "Great survey!";
+        var rating = "5";
+        
+        // Display someone else's results
+        document.getElementById('resultName').textContent = name;
+        document.getElementById('resultEmail').textContent = email;
+        document.getElementById('resultAge').textContent = age;
+        document.getElementById('resultFeedback').textContent = feedback;
+        document.getElementById('resultRating').textContent = rating;
     });
 </script>
 
