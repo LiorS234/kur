@@ -1,55 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>throughout</title>
-<link rel="shortcut icon" href="jujutsu-kaisen-gojo-honored-one.avif" type="image/x-icon">
-<link rel="stylesheet" href="kur.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
 
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    #results {
+        margin-top: 20px;
+    }
+</style>
 </head>
- <body dir="rtl"> 
-    
+<body>
 
-<h1>מה המידה האהובה עליכם</h1>
+<div class="container">
+    <h1>Survey Form</h1>
+    <form id="surveyForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select a rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <div id="results" style="display: none;">
+        <h2>Submitted Results:</h2>
+        <p><strong>Name:</strong> <span id="resultName"></span></p>
+        <p><strong>Email:</strong> <span id="resultEmail"></span></p>
+        <p><strong>Age:</strong> <span id="resultAge"></span></p>
+        <p><strong>Feedback:</strong> <span id="resultFeedback"></span></p>
+        <p><strong>Rating:</strong> <span id="resultRating"></span></p>
+    </div>
+</div>
 
-
-<input type="radio" name="k1" ="">    <!-- radio you wright questions and you can choose 1 -->
-<span>well Done</span>
-<br>
-<input type="radio" name="k1" ="">     <!-- name= that you can choose one question and that if you change your name you can choose another question-->
-<span>medium</span>
-<br>
-<input type="radio" name="k1" ="">
-<span>medium well</span>
-<br>
-<input type="radio" name="k1"> 
-<span>other</span>
-<br> <br>
-<h1>איך אתם אוהבים את השווארמה שלכם?</h1>     <!-- the question-->
-<input type="radio" name="k2">
-<span>בלאפה</span>
-<br>
-<input type="radio" name="k2">
-<span>בפיתה</span>
-<br>
-<input type="radio" name="k2">
-<span>בבגט</span>
-<br><br><br>
-<iframe src="https://onepiece-nakama.com/%d7%95%d7%95%d7%90%d7%9f-%d7%a4%d7%99%d7%a1-%d7%a6%d7%90%d7%a4%d7%98%d7%a8-1106-%d7%9e%d7%aa%d7%95%d7%a8%d7%92%d7%9d-%d7%9c%d7%a2%d7%91%d7%a8%d7%99%d7%aa/" frameborder="0"
-width="750px" height="400px"></iframe>
-<!-- iframe= you need to put a site link then you can see it on your site-->
-<iframe src="https://www.youtube.com/embed/-6UeyfH0EWI" frameborder="0" height="300px" width="300px"></iframe>  <!-- to put youtube short you need to put the youtube link than to copy the last slash in the/-->
-
-
-
- 
-
-    
-    
-
-
-
+<script>
+    document.getElementById('surveyForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Retrieve form values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var age = document.getElementById('age').value;
+        var feedback = document.getElementById('feedback').value;
+        var rating = document.getElementById('rating').value;
+        
+        // Display submitted results
+        document.getElementById('resultName').textContent = name;
+        document.getElementById('resultEmail').textContent = email;
+        document.getElementById('resultAge').textContent = age;
+        document.getElementById('resultFeedback').textContent = feedback;
+        document.getElementById('resultRating').textContent = rating;
+        
+        // Hide form and display results
+        document.getElementById('surveyForm').style.display = 'none';
+        document.getElementById('results').style.display = 'block';
+    });
+</script>
 
 </body>
 </html>
