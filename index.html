@@ -1,157 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Survey Form</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-    }
-
-    .container {
-        max-width: 600px;
-        margin: 20px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 8px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    input[type="submit"] {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #0056b3;
-    }
-
-    #results {
-        margin-top: 20px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body dir="ltr">
+    
+<center>
 
-<div class="container">
-    <h1>Survey Form</h1>
-    <form id="surveyForm">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
-        </div>
-        <div class="form-group">
-            <label for="feedback">Feedback:</label>
-            <textarea id="feedback" name="feedback" rows="4" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating" required>
-                <option value="">Select a rating</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-    <div id="results" style="display: none;">
-        <h2>Submitted Results:</h2>
-        <p><strong>Name:</strong> <span id="resultName"></span></p>
-        <p><strong>Email:</strong> <span id="resultEmail"></span></p>
-        <p><strong>Age:</strong> <span id="resultAge"></span></p>
-        <p><strong>Feedback:</strong> <span id="resultFeedback"></span></p>
-        <p><strong>Rating:</strong> <span id="resultRating"></span></p>
-    </div>
-    <div id="viewResults" style="display: none;">
-        <h2>View Results:</h2>
-        <button id="viewBtn">View</button>
-    </div>
+<h1>monke wordlle</h1>
+
+<input type="text" placeholder="wright a word" id="wordElement">
+
+
+<button onclick="guess()" >press</button>
+
+<br><br>
+
+<div id="container">
+
+
+
 </div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
 
-<script>
-    document.getElementById('surveyForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
-        
-        // Retrieve form values
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var age = document.getElementById('age').value;
-        var feedback = document.getElementById('feedback').value;
-        var rating = document.getElementById('rating').value;
-        
-        // Display submitted results
-        document.getElementById('resultName').textContent = name;
-        document.getElementById('resultEmail').textContent = email;
-        document.getElementById('resultAge').textContent = age;
-        document.getElementById('resultFeedback').textContent = feedback;
-        document.getElementById('resultRating').textContent = rating;
-        
-        // Hide form and display results
-        document.getElementById('surveyForm').style.display = 'none';
-        document.getElementById('results').style.display = 'block';
-        document.getElementById('viewResults').style.display = 'block';
-    });
 
-    document.getElementById('viewBtn').addEventListener('click', function() {
-        // You can set someone else's results manually here
-        var name = "John Doe";
-        var email = "johndoe@example.com";
-        var age = "30";
-        var feedback = "Great survey!";
-        var rating = "5";
-        
-        // Display someone else's results
-        document.getElementById('resultName').textContent = name;
-        document.getElementById('resultEmail').textContent = email;
-        document.getElementById('resultAge').textContent = age;
-        document.getElementById('resultFeedback').textContent = feedback;
-        document.getElementById('resultRating').textContent = rating;
-    });
-</script>
 
+
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js"></script>
 </body>
 </html>
