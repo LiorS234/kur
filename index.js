@@ -1,66 +1,22 @@
-let toGuess = "apple"
-let wordElement = document.getElementById('wordElement')
-let container = document.getElementById('container')
-let guessCount = 0
-function guess(){
+let actor= document.getElementById('actor')
+let food= document.getElementById('food')
+let animal= document.getElementById('animal')
+let adjective= document.getElementById('adjective')
+let result=document.getElementById('result')
 
-    
-    
-
-    let firstword= wordElement.value.charAt(0)
-    let secondword= wordElement.value.charAt(1)
-    let thirdword= wordElement.value.charAt(2)
-    let fourthword= wordElement.value.charAt(3)
-    let fifthword= wordElement.value.charAt(4)
-
-    container.innerHTML+=`
- <div class="letter" style="background-color: ${checkletter(firstword,0)};">${firstword}</div>
- <div class="letter" style="background-color: ${checkletter(secondword,1)};">${secondword}</div>
- <div class="letter" style="background-color: ${checkletter(thirdword,2)};">${thirdword}</div>
- <div class="letter" style="background-color: ${checkletter(fourthword,3)};">${fourthword}</div>
- <div class="letter" style="background-color: ${checkletter(fifthword,4)};">${fifthword}</div>
- 
-
-
- 
-    `
-
-
-    let inputWord = wordElement.value.trim().toLowerCase() ;
- 
-    if (inputWord.length <5)  {
-     alert("need 5 letters ")
-     window.location.reload();
-     return ;
-    }
-    if ( inputWord.length >5){
-        alert("need 5 letters ")
-        window.location.reload();
-        return ;
-    }
-    if(wordElement.value === toGuess){
-        alert('you won!!!') ;
-        window.location.reload();
-    }
-    guessCount =  guessCount + 1
-    if (guessCount == 6) {
-        // Alert the user that maximum guesses have been reached
-        alert("Maximum guesses reached!");
-
-        window.location.reload();
-        
-
-
-
+function press(){
+if(actor.value=='' ||food.value=='' ||animal.value=='' ||adjective.value==''){
+    alert("you need to complete these sentences")
+return
 }
-
+let stories=[
+    `${actor.value}, was a very strange man some people said he loved to eat ${food.value} there was a rumor that people saw him riding on a ${animal.value}, he must be realy ${adjective.value}`,
+`many years ago there was a man named ${actor.value}, he kidnapped people and maked them eat ${food.value}, the only thing he was scared of is ${animal.value}s, many people says that he was very ${adjective.value}`,
+`${actor.value} realy hated pigs, nobody knows why but when he saw pigs he would cry. when he was young he loved to eat only ${food.value}, the animal he love the most is ${animal.value}. now he a very ${adjective.value} person. `,
+`${actor.value} was a very lonley human, nobody loved him he didnt have friends and he's secrely adopted. he didnt comit sucide because he had a pet, a ${animal.value}. but he was fat so he ate his own pet. he ate too many ${food.value}. and now hes ${adjective.value}  `,
+]
+result.innerHTML= stories[randomInteger(0,stories.length-1)]
 }
-function checkletter(letter,index){
-    if(toGuess.charAt(index)==letter){
-        return "green"
-    }
-    if(toGuess.includes(letter)){
-        return "yellow"
-    }
-    return "red"
+function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
 }
